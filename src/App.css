@@ -9,7 +9,7 @@
 }
 
 body {
-  background-color: #f7f7f7;
+  background-color: lightblue;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,7 +41,7 @@ h4 {
 }
 
 .inc-exp-container {
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   box-shadow: var(--box-shadow);
   padding: 20px;
   display: flex;
@@ -157,4 +157,8 @@ input[type='number'] {
 }
 .own_css {
   text-align: center;
+}
+.bgcolor{
+  background-color: darkblue;
+  text-decoration-color: darkblue;
 }

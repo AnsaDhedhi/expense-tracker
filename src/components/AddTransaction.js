@@ -3,19 +3,28 @@ import { GlobalContext }  from  '../Context/GlobalState';
 
 export const AddTransaction = () => {
     const [text, setText] = useState('');
-    const [amount, setAmount] = useState(0);
+    const [amount, setAmount] = useState();
 
     const {AddTransaction} = useContext(GlobalContext);
 
     const onSubmit = e => {
         e.preventDefault();
 
+
         const newTransaction ={
             id: Math.floor(Math.random() * 100000000),
             text,
-            amount: +amount
+            amount : +amount,
+
+            
         }
         AddTransaction(newTransaction);
+        setText("")
+        setAmount("")
+            
+
+        
+            
     }
     return(
       <>
@@ -28,12 +37,13 @@ export const AddTransaction = () => {
           <div className="form-contol">
               <label htmlFor="amount">
                   Amount <br/>
-                  (negative - expense, positive - income)
+                  
               </label>
               <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount..."></input>
           </div>
-          <button className="btn">Add Transaction</button>
+          <button className="btn" >Add Transaction</button>
           </form>
+
       </>
     )
 }
